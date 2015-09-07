@@ -47,6 +47,7 @@
     <Compile Include="Common\Position.cs" />
     <Compile Include="Figures\Contracts\IFigure.cs" />
     <Compile Include="Figures\Pawn.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

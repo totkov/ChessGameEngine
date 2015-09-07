@@ -7,9 +7,9 @@
 
     public class Board
     {
-        private IFigure[,] board;
+        private readonly IFigure[,] board;
 
-        public readonly Board(int rows = GlobalConstants.StandardGameTotalBoardRows,
+        public Board(int rows = GlobalConstants.StandardGameTotalBoardRows,
             int cols = GlobalConstants.StandardGameTotalBoardCols)
         {
             this.TotalRows = rows;
