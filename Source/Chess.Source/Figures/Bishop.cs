@@ -3,11 +3,11 @@
     using Chess.Source.Common;
     using Chess.Source.Figures.Contracts;
 
-    public class Pawn : BaseFigure, IFigure
+    public class Bishop : BaseFigure, IFigure
     {
-        public Pawn(ChessColor color)
+        public Bishop(ChessColor color)
             : base(color)
-        { 
+        {
         }
     }
 }

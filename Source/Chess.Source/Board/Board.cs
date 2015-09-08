@@ -4,8 +4,9 @@
 
     using Chess.Source.Figures.Contracts;
     using Chess.Source.Common;
+    using Chess.Source.Board.Contracts;
 
-    public class Board
+    public class Board : IBoard
     {
         private readonly IFigure[,] board;
 
