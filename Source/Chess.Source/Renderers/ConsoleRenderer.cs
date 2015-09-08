@@ -17,9 +17,10 @@
             Console.SetCursorPosition(centerCol, centerRow);
 
             // TODO: add main menu
-            Thread.Sleep(1000);
             
             Console.WriteLine(Logo);
+
+            Thread.Sleep(1000);
         }
 
         public void RenderBoard(IBoard board)
