@@ -4,11 +4,18 @@
 
     using Chess.Source.Engine.Contracts;
     using Chess.Source.Players.Contracts;
+    using Chess.Source.Renderers.Contracts;
 
 
     public class StandardTwoPlayerEngine : IChessEngine
     {
         private readonly IList<IPlayer> players;
+        private readonly IRenderer renderer;
+
+        public StandardTwoPlayerEngine(IRenderer renderer)
+        {
+            this.renderer = renderer;
+        }
 
         public IList<IPlayer> Players
         {
