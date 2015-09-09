@@ -12,6 +12,8 @@
     using Chess.Source.Board.Contracts;
     using Chess.Source.Common;
     using Chess.Source.Figures.Contracts;
+    using Chess.Source.Movements.Contracts;
+    using Chess.Source.Movements.Strategies;
 
     public class StandardTwoPlayerEngine : IChessEngine
     {
@@ -19,6 +21,7 @@
         private readonly IRenderer renderer;
         private readonly IInputProvider input;
         private readonly IBoard board;
+        private readonly IMovementStrategy movementStrategy;
 
         private int currentPlayerIndex;
 
@@ -26,6 +29,7 @@
         {
             this.renderer = renderer;
             this.input = inputProvider;
+            movementStrategy = new NormalMovementStrategy();
             this.board = new Board();
         }
 
@@ -63,7 +67,7 @@
                     this.CheckIfPlayerOwnsFigure(player, figure, from);
                     this.CheckIfToPositionIsEmpty(figure, move.To);
 
-                    var availableMovements = figure.Move();
+                    var availableMovements = figure.Move(this.movementStrategy);
                     foreach (var movement in availableMovements)
                     {
                         movement.VlidateMove(figure, board, move);

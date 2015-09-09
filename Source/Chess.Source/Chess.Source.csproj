@@ -66,7 +66,13 @@
     <Compile Include="InputProviders\ConsoleInputProvider.cs" />
     <Compile Include="InputProviders\Contracts\IInputProvider.cs" />
     <Compile Include="Movements\Contracts\IMovement.cs" />
+    <Compile Include="Movements\Contracts\IMovementStrategy.cs" />
+    <Compile Include="Movements\NormalBishopMovement.cs" />
+    <Compile Include="Movements\NormalKingMovement.cs" />
+    <Compile Include="Movements\NormalKnightMovement.cs" />
     <Compile Include="Movements\NormalPawnMovement.cs" />
+    <Compile Include="Movements\NormalRookMovement.cs" />
+    <Compile Include="Movements\Strategies\NormalMovementStrategy.cs" />
     <Compile Include="Players\Contracts\IPlayer.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
