@@ -13,7 +13,7 @@
         { 
         }
 
-        public override ICollection<IMovemant> Move()
+        public override ICollection<IMovement> Move()
         {
             throw new System.NotImplementedException();
         }

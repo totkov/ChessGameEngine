@@ -5,6 +5,7 @@
     using Chess.Source.Common;
     using Chess.Source.Figures.Contracts;
     using Chess.Source.Movements.Contracts;
+    using Chess.Source.Movements;
 
     public class Pawn : BaseFigure, IFigure
     {
@@ -13,9 +14,12 @@
         { 
         }
 
-        public override ICollection<IMovemant> Move()
+        public override ICollection<IMovement> Move()
         {
-            throw new System.NotImplementedException();
+            return new List<IMovement>
+            {
+                new NormalPawnMovement()
+            };
         }
     }
 }

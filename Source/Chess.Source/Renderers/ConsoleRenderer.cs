@@ -57,7 +57,7 @@
 
             this.PrintBorder(startRowPrint, startColPrint, board.TotalRows, board.TotalCols);
 
-            int counter = 0;
+            int counter = 1;
             for (int top = 0; top < board.TotalRows; top++)
             {
                 for (int left = 0; left < board.TotalCols; left++)

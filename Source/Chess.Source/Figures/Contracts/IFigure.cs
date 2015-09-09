@@ -9,6 +9,6 @@
     {
         ChessColor Color { get; }
 
-        ICollection<IMovemant> Move();
+        ICollection<IMovement> Move();
     }
 }
