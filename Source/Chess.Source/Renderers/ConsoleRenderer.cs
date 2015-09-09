@@ -96,13 +96,13 @@
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 10, 1);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - error.Length / 2, 1);
             Console.Write(error);
 
             Thread.Sleep(2000);
 
             //Clear console row
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 10, 1);
+            Console.SetCursorPosition(0, 1);
             Console.Write(new string(' ', Console.WindowWidth));
         }
 

@@ -11,6 +11,7 @@
     using Chess.Source.InputProviders.Contracts;
     using Chess.Source.Board.Contracts;
     using Chess.Source.Common;
+    using Chess.Source.Figures.Contracts;
 
     public class StandardTwoPlayerEngine : IChessEngine
     {
@@ -57,6 +58,14 @@
                     var player = this.GetNextPlayer();
                     var move = this.input.GetNextPlayerMove(player);
                     var from = move.From;
+                    var figure = board.GetFigureAtPosition(from);
+                    this.CheckIfPlayerOwnsFigure(player, figure, from);
+                    // TODO: Check castle => Check if castle valid
+                    // TODO: Move figure (Check pawn for An-Pasan)
+                    // TODO: Check check
+                    // TODO: If in check => check checkmate
+                    // TODO: If not in check => check drow
+                    // TODO: Continue
                 }
                 catch (Exception ex)
                 {
@@ -69,6 +78,18 @@
         public void WinningConditions()
         {
             throw new System.NotImplementedException();
+        }
+
+        private void CheckIfPlayerOwnsFigure(IPlayer player, IFigure figure, Position from)
+        {
+            if (figure == null)
+            {
+                throw new InvalidOperationException(string.Format("Position {0}{1} is empty!", from.Col, from.Row));
+            }
+            if (figure.Color != player.Color)
+            {
+                throw new InvalidOperationException(string.Format("Figure at {0}{1} is not yiurs!", from.Col, from.Row));
+            }
         }
 
         private void SetFirstPlayerIndex()

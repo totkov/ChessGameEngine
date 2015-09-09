@@ -65,6 +65,7 @@
     <Compile Include="Figures\Rook.cs" />
     <Compile Include="InputProviders\ConsoleInputProvider.cs" />
     <Compile Include="InputProviders\Contracts\IInputProvider.cs" />
+    <Compile Include="Movements\Contracts\IMovemant.cs" />
     <Compile Include="Players\Contracts\IPlayer.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

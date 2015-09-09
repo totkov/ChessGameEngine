@@ -1,6 +1,9 @@
 ﻿namespace Chess.Source.Figures.Contracts
 {
+    using System.Collections.Generic;
+
     using Chess.Source.Common;
+    using Chess.Source.Movements.Contracts;
 
     public abstract class BaseFigure : IFigure
     {
@@ -10,5 +13,7 @@
         }
 
         public ChessColor Color { get; private set; }
+
+        public abstract ICollection<IMovemant> Move();
     }
 }
