@@ -24,6 +24,9 @@
             IGameInitializationStrategy gameInitializationStrategy = new StandardStartGameInitializationStrategy();
 
             chessEngine.Initialize(gameInitializationStrategy);
+            chessEngine.Start();
+
+            Console.ReadLine();
         }
     }
 }

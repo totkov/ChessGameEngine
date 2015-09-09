@@ -24,7 +24,7 @@
         public void AddFigure(IFigure figure, Position position)
         {
             ObjectValidator.CheckIfObjectIsNull(figure, GlobalErrorMessages.NullFigureErrorMessages);
-            this.CheckIfPositionIsValid(position);
+            Position.CheckIfPositionIsValid(position);
 
             int arrRow = this.GetArrayRow(position.Row);
             int arrCol = this.GetArrayCol(position.Col);
@@ -33,7 +33,7 @@
 
         public void RemoveFigure(Position position)
         {
-            this.CheckIfPositionIsValid(position);
+            Position.CheckIfPositionIsValid(position);
 
             int arrRow = this.GetArrayRow(position.Row);
             int arrCol = this.GetArrayCol(position.Col);
@@ -55,19 +55,6 @@
         private int GetArrayCol(char chessCol)
         {
             return chessCol - 'a';
-        }
-
-        private void CheckIfPositionIsValid(Position position)
-        {
-            if (position.Row < GlobalConstants.MinimumRowOnBoard || position.Row > GlobalConstants.MaximumRowOnBoard)
-            {
-                throw new IndexOutOfRangeException("Selected row position on the board is not valid!");
-            }
-
-            if (position.Col < GlobalConstants.MinimumColOnBoard || position.Col > GlobalConstants.MaximumColOnBoard)
-            {
-                throw new IndexOutOfRangeException("Selected column position on the board is not valid!");
-            }
         }
     }
 }

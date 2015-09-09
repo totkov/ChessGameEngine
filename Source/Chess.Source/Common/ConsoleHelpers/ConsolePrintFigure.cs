@@ -98,11 +98,6 @@
                 return;
             }
 
-            if (!patterns.ContainsKey(figure.GetType().Name))
-            {
-                return;
-            }
-
             var figurePattern = patterns[figure.GetType().Name];
 
             for (int i = 0; i < figurePattern.GetLength(0); i++)
