@@ -74,12 +74,10 @@
                     }
                     board.MoveFigureAtPosition(figure, from, to);
 
-                    // TODO: Check castle => Check if castle valid
-                    // TODO: Move figure (Check pawn for An-Pasan)
-                    // TODO: Check check
-                    // TODO: If in check => check checkmate
-                    // TODO: If not in check => check drow
-                    // TODO: Continue
+                    // TODO: Check checking
+                    // TODO: Stalemate checking
+                    // TODO: Checkmate checking
+
                     this.renderer.RenderBoard(this.board);
                 }
                 catch (Exception ex)

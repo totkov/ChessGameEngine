@@ -9,6 +9,8 @@
 
     public class NormalKingMovement : IMovement
     {
+        // TODO: Castling checking
+
         public void VlidateMove(IFigure figure, IBoard board, Move move)
         {
             Position from = move.From;

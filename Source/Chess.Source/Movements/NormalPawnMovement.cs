@@ -9,6 +9,9 @@
 
     public class NormalPawnMovement : IMovement
     {
+        // TODO: En passant checking
+        // TODO: Promotion checking
+
         private const string PawnBackwardsErrorMessage = "Pawns cannot move backwards!";
         private const string PawnInvalidMove = "Pawns cannot move this way!";
 

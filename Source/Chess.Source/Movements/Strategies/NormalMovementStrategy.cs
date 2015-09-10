@@ -34,8 +34,7 @@
             },
             { "Queen", new List<IMovement>
                  {
-                     new NormalBishopMovement(),
-                     new NormalRookMovement()
+                     new NormalQueenMovement()
                  } 
             },
         };
