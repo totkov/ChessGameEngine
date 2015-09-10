@@ -61,8 +61,8 @@
                 {
                     var player = this.GetNextPlayer();
                     var move = this.input.GetNextPlayerMove(player);
-                    var from = move.From;
-                    var to = move.To;
+                    Position from = move.From;
+                    Position to = move.To;
                     var figure = board.GetFigureAtPosition(from);
                     this.CheckIfPlayerOwnsFigure(player, figure, from);
                     this.CheckIfToPositionIsEmpty(figure, move.To);

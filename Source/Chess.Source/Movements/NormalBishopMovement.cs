@@ -11,18 +11,16 @@
     {
         public void VlidateMove(IFigure figure, IBoard board, Move move)
         {
+            Position from = move.From;
+            Position to = move.To;
+            
             var rowDistance = Math.Abs(move.From.Row - move.To.Row);
             var colDistance = Math.Abs(move.From.Col - move.To.Col);
-
-            var other = figure.Color == ChessColor.White ? ChessColor.Black : ChessColor.White;
 
             if (rowDistance != colDistance)
             {
                 throw new InvalidOperationException("Bishop cannot move this way!");
             }
-
-            var from = move.From;
-            var to = move.To;
 
             if (to.Row > from.Row)
             {
