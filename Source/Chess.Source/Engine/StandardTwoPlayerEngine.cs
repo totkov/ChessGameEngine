@@ -18,10 +18,10 @@
     public class StandardTwoPlayerEngine : IChessEngine
     {
         private IList<IPlayer> players;
-        private readonly IRenderer renderer;
-        private readonly IInputProvider input;
         private readonly IBoard board;
         private readonly IMovementStrategy movementStrategy;
+        private readonly IRenderer renderer;
+        private readonly IInputProvider input;
 
         private int currentPlayerIndex;
 
@@ -60,18 +60,24 @@
                 try
                 {
                     var player = this.GetNextPlayer();
+
                     var move = this.input.GetNextPlayerMove(player);
+
                     Position from = move.From;
                     Position to = move.To;
+
                     var figure = board.GetFigureAtPosition(from);
+
                     this.CheckIfPlayerOwnsFigure(player, figure, from);
                     this.CheckIfToPositionIsEmpty(figure, move.To);
 
                     var availableMovements = figure.Move(this.movementStrategy);
+
                     foreach (var movement in availableMovements)
                     {
                         movement.VlidateMove(figure, board, move);
                     }
+
                     board.MoveFigureAtPosition(figure, from, to);
 
                     // TODO: Check checking
@@ -90,7 +96,8 @@
 
         public void WinningConditions()
         {
-            throw new System.NotImplementedException();
+            // TODO: Winning conditions
+            // TODO: Renderer wining screen
         }
 
         private void CheckIfPlayerOwnsFigure(IPlayer player, IFigure figure, Position from)
