@@ -54,6 +54,7 @@
     <Compile Include="ObjectValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NormalGameBoardTests.cs" />
+    <Compile Include="PlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chess.Source\Chess.Source.csproj">

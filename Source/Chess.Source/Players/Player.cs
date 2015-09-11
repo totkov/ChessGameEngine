@@ -25,7 +25,10 @@
         public void AddFigure(IFigure figure)
         {
             ObjectValidator.CheckIfObjectIsNull(figure, GlobalErrorMessages.NullFigureErrorMessages);
-            // TODO: check figure and player color
+            if (this.Color != figure.Color)
+            {
+                throw new InvalidOperationException("The figure you want to add, is not your color!");
+            }
             this.CheckIfFigureExists(figure);
             this.figures.Add(figure);
         }
@@ -33,7 +36,10 @@
         public void RemoveFigure(IFigure figure)
         {
             ObjectValidator.CheckIfObjectIsNull(figure, GlobalErrorMessages.NullFigureErrorMessages);
-            // TODO: check figure and player color
+            if (this.Color != figure.Color)
+            {
+                throw new InvalidOperationException("The figure that you want to delete is not your color!");
+            }
             this.CheckIfFigureDoesNotExists(figure);
             this.figures.Remove(figure);
         }
